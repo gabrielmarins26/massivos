@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerador de Comunicados</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Gerador de Comunicados</h1>
+      <div class="grid-container">
+        <!-- Grid 1: Selects e Botões -->
+        <div class="grid-item">
+          <div>
+            <label for="incidentSelect"
+              >Selecione um incidente massivo salvo:</label
+            >
+            <select id="incidentSelect" onchange="loadIncident()">
+              <option value="">Selecione...</option>
+            </select>
+          </div>
+
+          <button type="button" onclick="gerarComunicado()">
+            Gerar Comunicado
+          </button>
+          <button type="button" onclick="salvarIncidente()">
+            Salvar Incidente
+          </button>
+          <button type="button" onclick="excluirIncidente()">
+            Excluir Incidente
+          </button>
+        </div>
+
+        <!-- Grid 2: Formulário -->
+        <div class="grid-item">
+          <form id="comunicadoForm">
+            <label for="tipo">Tipo do Comunicado:</label>
+            <select id="tipo" required onchange="gerarComunicado()">
+              <option value="PADRÃO">Padrão</option>
+              <option value="ATUALIZAÇÃO">Atualização</option>
+              <option value="RESOLVIDO">Resolvido</option>
+            </select>
+
+            <label for="titulo">Título do Incidente:</label>
+            <input type="text" id="titulo" required />
+
+            <label for="numero">Número do Incidente (Opcional):</label>
+            <input type="text" id="numero" />
+
+            <label for="descricao">Descrição do Incidente:</label>
+            <textarea id="descricao" required></textarea>
+
+            <label for="dataIdentificacao"
+              >Data de Identificação (Opcional):</label
+            >
+            <input type="datetime-local" id="dataIdentificacao" />
+
+            <label for="dataAtualizacao"
+              >Data da Próxima Atualização (Opcional):</label
+            >
+            <input type="datetime-local" id="dataAtualizacao" />
+
+            <label for="dataResolucao">Data da Resolução (Opcional):</label>
+            <input type="datetime-local" id="dataResolucao" />
+
+            <label for="nomeAnalista">Nome do Analista:</label>
+            <input type="text" id="nomeAnalista" required />
+          </form>
+        </div>
+
+        <!-- Grid 3: Textos Formatados -->
+        <div class="grid-item">
+          <div class="output">
+            <h2>Comunicado para E-mail:</h2>
+            <pre id="outputEmail"></pre>
+
+            <h2>Comunicado para WhatsApp:</h2>
+            <pre id="outputWhatsApp"></pre>
+
+            <h2>Comunicado para Workplace:</h2>
+            <pre id="outputWorkplace"></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
