@@ -226,8 +226,19 @@ Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a)
 function copiarConteudo(id) {
   const preElement = document.getElementById(id);
   const tempTextArea = document.createElement("textarea");
+
   // Substitui <br> por quebras de linha reais
-  tempTextArea.value = preElement.innerHTML.replace(/<br\s*\/?>/gi, "\n");
+  let content = preElement.innerHTML.replace(/<br\s*\/?>/gi, "\n");
+
+  // Cria um elemento temporário para decodificar entidades HTML
+  const tempDiv = document.createElement("div");
+  tempDiv.innerHTML = content;
+
+  // Obtém o texto decodificado
+  content = tempDiv.textContent || tempDiv.innerText || "";
+
+  // Copia o conteúdo decodificado para a área de transferência
+  tempTextArea.value = content;
   document.body.appendChild(tempTextArea);
   tempTextArea.select();
   document.execCommand("copy");
