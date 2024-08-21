@@ -143,61 +143,83 @@ function gerarComunicado() {
 
   if (tipo === "PADRÃO") {
     emailTexto = `
-🔔🚨INCIDENTE MASSIVO - ${titulo} - <<${numero}>>🚨🔔\n
-Olá!\n\n
-Comunicamos que ${descricao}.\n\n
-⏳ A falha foi identificada em ${dataIdentificacao}.\n
-⏰ Nova atualização sobre este caso em ${dataAtualizacao}.\n\n
-Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).\n\n
+🔔🚨INCIDENTE MASSIVO - ${titulo} - <<${numero}>>🚨🔔
+Olá!
+
+Comunicamos que ${descricao}.
+
+⏳ A falha foi identificada em ${dataIdentificacao}.
+⏰ Nova atualização sobre este caso em ${dataAtualizacao}.
+
+Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).
+
 Atenciosamente,`;
     whatsappTexto = `
-🔔🚨INCIDENTE MASSIVO - ${titulo}🚨🔔\n
-Olá!\n\n
-Comunicamos que ${descricao}.\n\n
-⏳ A falha foi identificada em ${dataIdentificacao}.\n
-⏰ Nova atualização sobre este caso em ${dataAtualizacao}.\n\n
+🔔🚨INCIDENTE MASSIVO - ${titulo}🚨🔔
+Olá!
+
+Comunicamos que ${descricao}.
+
+⏳ A falha foi identificada em ${dataIdentificacao}.
+⏰ Nova atualização sobre este caso em ${dataAtualizacao}.
+
 Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).`;
     workplaceTexto = `
-🔔🚨INCIDENTE MASSIVO - ${titulo}🚨🔔\n
-Olá!  Comunicamos que ${descricao}.\n
-⏳ A falha foi identificada em ${dataIdentificacao}.\n
-⏰ Nova atualização sobre este caso em ${dataAtualizacao}.\n
-Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).\n
+🔔🚨INCIDENTE MASSIVO - ${titulo}🚨🔔
+Olá!  Comunicamos que ${descricao}.
+⏳ A falha foi identificada em ${dataIdentificacao}.
+⏰ Nova atualização sobre este caso em ${dataAtualizacao}.
+Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).
 #comunicadooficial #incidentemassivo #incidentetecnologia #falhadeservico #indisponibilidade #getic`;
   } else if (tipo === "ATUALIZAÇÃO") {
     emailTexto = `
-🔔🚨[ATUALIZAÇÃO] INCIDENTE MASSIVO - ${titulo} - <<${numero}>>🚨🔔\n
-Olá!\n\nInformamos que ${descricao}.\n\n
-⏰ Nova atualização sobre este caso em ${dataAtualizacao}.\n\n
+🔔🚨[ATUALIZAÇÃO] INCIDENTE MASSIVO - ${titulo} - <<${numero}>>🚨🔔
+Olá!
+
+Informamos que ${descricao}.
+
+⏰ Nova atualização sobre este caso em ${dataAtualizacao}.
+
 Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).`;
     whatsappTexto = `
-🔔🚨[ATUALIZAÇÃO] INCIDENTE MASSIVO - ${titulo}🚨🔔\n
-Olá!\n\nInformamos que ${descricao}.\n\n
-⏰ Nova atualização sobre este caso em ${dataAtualizacao}.\n\n
+🔔🚨[ATUALIZAÇÃO] INCIDENTE MASSIVO - ${titulo}🚨🔔
+Olá!
+
+Informamos que ${descricao}.
+
+⏰ Nova atualização sobre este caso em ${dataAtualizacao}.
+
 Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).`;
     workplaceTexto = `
-🔔🚨[ATUALIZAÇÃO] INCIDENTE MASSIVO - ${titulo}🚨🔔\n
-Olá!  Informamos que ${descricao}.\n
-⏰ Nova atualização sobre este caso em ${dataAtualizacao}.\n
-Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).\n
+🔔🚨[ATUALIZAÇÃO] INCIDENTE MASSIVO - ${titulo}🚨🔔
+Olá!  Informamos que ${descricao}.
+⏰ Nova atualização sobre este caso em ${dataAtualizacao}.
+Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).
 #comunicadooficial #incidentemassivo #incidentetecnologia #falhadeservico #indisponibilidade #getic`;
   } else if (tipo === "RESOLVIDO") {
     emailTexto = `
- 🔔✅[RESOLVIDO] INCIDENTE MASSIVO - ${titulo} - <<${numero}>>✅🔔\n
- Olá!\n\nComunicamos que ${descricao}.\n\n
- ✅ O problema foi resolvido em ${dataResolucao}.\n\n
+ 🔔✅[RESOLVIDO] INCIDENTE MASSIVO - ${titulo} - <<${numero}>>✅🔔
+ Olá!
+ 
+ Comunicamos que ${descricao}.
+
+ ✅ O problema foi resolvido em ${dataResolucao}.
+
  Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).`;
     whatsappTexto = `
-🔔✅[RESOLVIDO] INCIDENTE MASSIVO - ${titulo}✅🔔\n
-Olá!\n\n
-Comunicamos que ${descricao}.\n\n
-✅ O problema foi resolvido em ${dataResolucao}.\n\n
+🔔✅[RESOLVIDO] INCIDENTE MASSIVO - ${titulo}✅🔔
+Olá!
+
+Comunicamos que ${descricao}.
+
+✅ O problema foi resolvido em ${dataResolucao}.
+
 Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).`;
     workplaceTexto = `
-🔔✅[RESOLVIDO] INCIDENTE MASSIVO - ${titulo}✅🔔\n
-Olá!  Comunicamos que ${descricao}.\n
-✅ O problema foi resolvido em ${dataResolucao}.\n
-Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).\n
+🔔✅[RESOLVIDO] INCIDENTE MASSIVO - ${titulo}✅🔔
+Olá!  Comunicamos que ${descricao}.
+✅ O problema foi resolvido em ${dataResolucao}.
+Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).
 #comunicadooficial #incidentemassivo #incidentetecnologia #falhadeservico #indisponibilidade #getic`;
   }
 
