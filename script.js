@@ -142,8 +142,7 @@ function gerarComunicado() {
   let workplaceTexto = "";
 
   if (tipo === "PADRÃO") {
-    emailTexto = `
-🔔🚨INCIDENTE MASSIVO - ${titulo} - <<${numero}>>🚨🔔
+    emailTexto = `🔔🚨INCIDENTE MASSIVO - ${titulo} - <<${numero}>>🚨🔔
 Olá!
 
 Comunicamos que ${descricao}.
@@ -154,8 +153,7 @@ Comunicamos que ${descricao}.
 Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).
 
 Atenciosamente,`;
-    whatsappTexto = `
-🔔🚨INCIDENTE MASSIVO - ${titulo}🚨🔔
+    whatsappTexto = `🔔🚨INCIDENTE MASSIVO - ${titulo}🚨🔔
 Olá!
 
 Comunicamos que ${descricao}.
@@ -164,16 +162,14 @@ Comunicamos que ${descricao}.
 ⏰ Nova atualização sobre este caso em ${dataAtualizacao}.
 
 Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).`;
-    workplaceTexto = `
-🔔🚨INCIDENTE MASSIVO - ${titulo}🚨🔔
+    workplaceTexto = `🔔🚨INCIDENTE MASSIVO - ${titulo}🚨🔔
 Olá!  Comunicamos que ${descricao}.
 ⏳ A falha foi identificada em ${dataIdentificacao}.
 ⏰ Nova atualização sobre este caso em ${dataAtualizacao}.
 Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).
 #comunicadooficial #incidentemassivo #incidentetecnologia #falhadeservico #indisponibilidade #getic`;
   } else if (tipo === "ATUALIZAÇÃO") {
-    emailTexto = `
-🔔🚨[ATUALIZAÇÃO] INCIDENTE MASSIVO - ${titulo} - <<${numero}>>🚨🔔
+    emailTexto = `🔔🚨[ATUALIZAÇÃO] INCIDENTE MASSIVO - ${titulo} - <<${numero}>>🚨🔔
 Olá!
 
 Informamos que ${descricao}.
@@ -181,8 +177,7 @@ Informamos que ${descricao}.
 ⏰ Nova atualização sobre este caso em ${dataAtualizacao}.
 
 Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).`;
-    whatsappTexto = `
-🔔🚨[ATUALIZAÇÃO] INCIDENTE MASSIVO - ${titulo}🚨🔔
+    whatsappTexto = `🔔🚨[ATUALIZAÇÃO] INCIDENTE MASSIVO - ${titulo}🚨🔔
 Olá!
 
 Informamos que ${descricao}.
@@ -190,15 +185,13 @@ Informamos que ${descricao}.
 ⏰ Nova atualização sobre este caso em ${dataAtualizacao}.
 
 Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).`;
-    workplaceTexto = `
-🔔🚨[ATUALIZAÇÃO] INCIDENTE MASSIVO - ${titulo}🚨🔔
+    workplaceTexto = `🔔🚨[ATUALIZAÇÃO] INCIDENTE MASSIVO - ${titulo}🚨🔔
 Olá!  Informamos que ${descricao}.
 ⏰ Nova atualização sobre este caso em ${dataAtualizacao}.
 Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).
 #comunicadooficial #incidentemassivo #incidentetecnologia #falhadeservico #indisponibilidade #getic`;
   } else if (tipo === "RESOLVIDO") {
-    emailTexto = `
- 🔔✅[RESOLVIDO] INCIDENTE MASSIVO - ${titulo} - <<${numero}>>✅🔔
+    emailTexto = `🔔✅[RESOLVIDO] INCIDENTE MASSIVO - ${titulo} - <<${numero}>>✅🔔
  Olá!
  
  Comunicamos que ${descricao}.
@@ -206,8 +199,7 @@ Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a)
  ✅ O problema foi resolvido em ${dataResolucao}.
 
  Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).`;
-    whatsappTexto = `
-🔔✅[RESOLVIDO] INCIDENTE MASSIVO - ${titulo}✅🔔
+    whatsappTexto = `🔔✅[RESOLVIDO] INCIDENTE MASSIVO - ${titulo}✅🔔
 Olá!
 
 Comunicamos que ${descricao}.
@@ -215,8 +207,7 @@ Comunicamos que ${descricao}.
 ✅ O problema foi resolvido em ${dataResolucao}.
 
 Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).`;
-    workplaceTexto = `
-🔔✅[RESOLVIDO] INCIDENTE MASSIVO - ${titulo}✅🔔
+    workplaceTexto = `🔔✅[RESOLVIDO] INCIDENTE MASSIVO - ${titulo}✅🔔
 Olá!  Comunicamos que ${descricao}.
 ✅ O problema foi resolvido em ${dataResolucao}.
 Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).
