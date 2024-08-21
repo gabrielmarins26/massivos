@@ -176,7 +176,9 @@ Informamos que ${descricao}.
 
 ⏰ Nova atualização sobre este caso em ${dataAtualizacao}.
 
-Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).`;
+Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).
+
+Atenciosamente,`;
     whatsappTexto = `🔔🚨[ATUALIZAÇÃO] INCIDENTE MASSIVO - ${titulo}🚨🔔
 Olá!
 
@@ -198,7 +200,9 @@ Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a)
 
  ✅ O problema foi resolvido em ${dataResolucao}.
 
- Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).`;
+ Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).
+ 
+ Atenciosamente,`;
     whatsappTexto = `🔔✅[RESOLVIDO] INCIDENTE MASSIVO - ${titulo}✅🔔
 Olá!
 
