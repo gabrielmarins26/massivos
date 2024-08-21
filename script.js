@@ -145,7 +145,7 @@ function gerarComunicado() {
     emailTexto = `🔔🚨INCIDENTE MASSIVO - ${titulo} - <<${numero}>>🚨🔔
 Olá!
 
-Comunicamos que ${descricao}.
+${descricao}
 
 ⏳ A falha foi identificada em ${dataIdentificacao}.
 ⏰ Nova atualização sobre este caso em ${dataAtualizacao}.
@@ -156,14 +156,14 @@ Atenciosamente,`;
     whatsappTexto = `🔔🚨INCIDENTE MASSIVO - ${titulo}🚨🔔
 Olá!
 
-Comunicamos que ${descricao}.
+${descricao}
 
 ⏳ A falha foi identificada em ${dataIdentificacao}.
 ⏰ Nova atualização sobre este caso em ${dataAtualizacao}.
 
 Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).`;
     workplaceTexto = `🔔🚨INCIDENTE MASSIVO - ${titulo}🚨🔔
-Olá!  Comunicamos que ${descricao}.
+Olá!  ${descricao}
 ⏳ A falha foi identificada em ${dataIdentificacao}.
 ⏰ Nova atualização sobre este caso em ${dataAtualizacao}.
 Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).
@@ -172,7 +172,7 @@ Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a)
     emailTexto = `🔔🚨[ATUALIZAÇÃO] INCIDENTE MASSIVO - ${titulo} - <<${numero}>>🚨🔔
 Olá!
 
-Informamos que ${descricao}.
+${descricao}
 
 ⏰ Nova atualização sobre este caso em ${dataAtualizacao}.
 
@@ -182,13 +182,13 @@ Atenciosamente,`;
     whatsappTexto = `🔔🚨[ATUALIZAÇÃO] INCIDENTE MASSIVO - ${titulo}🚨🔔
 Olá!
 
-Informamos que ${descricao}.
+${descricao}
 
 ⏰ Nova atualização sobre este caso em ${dataAtualizacao}.
 
 Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).`;
     workplaceTexto = `🔔🚨[ATUALIZAÇÃO] INCIDENTE MASSIVO - ${titulo}🚨🔔
-Olá!  Informamos que ${descricao}.
+Olá!  ${descricao}
 ⏰ Nova atualização sobre este caso em ${dataAtualizacao}.
 Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).
 #comunicadooficial #incidentemassivo #incidentetecnologia #falhadeservico #indisponibilidade #getic`;
@@ -196,7 +196,7 @@ Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a)
     emailTexto = `🔔✅[RESOLVIDO] INCIDENTE MASSIVO - ${titulo} - <<${numero}>>✅🔔
  Olá!
  
- Comunicamos que ${descricao}.
+ ${descricao}
 
  ✅ O problema foi resolvido em ${dataResolucao}.
 
@@ -206,13 +206,13 @@ Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a)
     whatsappTexto = `🔔✅[RESOLVIDO] INCIDENTE MASSIVO - ${titulo}✅🔔
 Olá!
 
-Comunicamos que ${descricao}.
+${descricao}
 
 ✅ O problema foi resolvido em ${dataResolucao}.
 
 Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).`;
     workplaceTexto = `🔔✅[RESOLVIDO] INCIDENTE MASSIVO - ${titulo}✅🔔
-Olá!  Comunicamos que ${descricao}.
+Olá!  ${descricao}
 ✅ O problema foi resolvido em ${dataResolucao}.
 Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).
 #comunicadooficial #incidentemassivo #incidentetecnologia #falhadeservico #indisponibilidade #getic`;
@@ -221,4 +221,15 @@ Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a)
   document.getElementById("outputEmail").innerText = emailTexto;
   document.getElementById("outputWhatsApp").innerText = whatsappTexto;
   document.getElementById("outputWorkplace").innerText = workplaceTexto;
+}
+
+function copiarConteudo(id) {
+  const preElement = document.getElementById(id);
+  const tempTextArea = document.createElement("textarea");
+  // Substitui <br> por quebras de linha reais
+  tempTextArea.value = preElement.innerHTML.replace(/<br\s*\/?>/gi, "\n");
+  document.body.appendChild(tempTextArea);
+  tempTextArea.select();
+  document.execCommand("copy");
+  document.body.removeChild(tempTextArea);
 }

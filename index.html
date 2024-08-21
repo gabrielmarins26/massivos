@@ -69,12 +69,15 @@
           </form>
         </div>
 
-        <!-- Grid 3: Textos Formatados -->
+        <!-- prettier-ignore -->
         <div class="grid-item">
+          <button type="button" class="grid-button" onclick="copiarConteudo('outputEmail')"> Copiar E-mail </button>
+          <button type="button" class="grid-button" onclick="copiarConteudo('outputWhatsApp')"> Copiar WhatsApp </button>
+          <button type="button" class="grid-button" onclick="copiarConteudo('outputWorkplace')"> Copiar Workplace </button>
           <div class="output">
             <h2>Comunicado para E-mail:</h2>
             <pre id="outputEmail"></pre>
-
+            
             <h2>Comunicado para WhatsApp:</h2>
             <pre id="outputWhatsApp"></pre>
 
