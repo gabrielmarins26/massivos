@@ -123,9 +123,9 @@ function formatarData(dataISO) {
 // Função para gerar os textos de comunicado
 function gerarComunicado() {
   const tipo = document.getElementById("tipo").value;
-  const titulo = document.getElementById("titulo").value;
-  const numero = document.getElementById("numero").value;
-  const descricao = document.getElementById("descricao").value;
+  const titulo = document.getElementById("titulo").value.trim();
+  const numero = document.getElementById("numero").value.trim();
+  const descricao = document.getElementById("descricao").value.trim();
   const dataIdentificacao = formatarData(
     document.getElementById("dataIdentificacao").value
   );
@@ -135,7 +135,9 @@ function gerarComunicado() {
   const dataResolucao = formatarData(
     document.getElementById("dataResolucao").value
   );
-  const nomeAnalista = document.getElementById("nomeAnalista").value;
+  const nomeAnalista = toCamelCase(
+    document.getElementById("nomeAnalista").value.trim()
+  );
 
   let emailTexto = "";
   let whatsappTexto = "";
@@ -243,4 +245,14 @@ function copiarConteudo(id) {
   tempTextArea.select();
   document.execCommand("copy");
   document.body.removeChild(tempTextArea);
+}
+
+function toCamelCase(str) {
+  return str
+    .toLowerCase() // Transforma toda a string em minúsculas
+    .split(" ") // Separa as palavras por espaço
+    .map(function (word) {
+      return word.charAt(0).toUpperCase() + word.slice(1); // Capitaliza a primeira letra de cada palavra
+    })
+    .join(" "); // Junta as palavras novamente com espaço
 }
