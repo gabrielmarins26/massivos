@@ -196,15 +196,15 @@ Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a)
 #comunicadooficial #incidentemassivo #incidentetecnologia #falhadeservico #indisponibilidade #getic`;
   } else if (tipo === "RESOLVIDO") {
     emailTexto = `🔔✅[RESOLVIDO] INCIDENTE MASSIVO - ${titulo} - <<${numero}>>✅🔔
- Olá!
+Olá!
  
- ${descricao}
+${descricao}
 
- ✅ O problema foi resolvido em ${dataResolucao}.
+✅ O problema foi resolvido em ${dataResolucao}.
 
- Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).
+Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).
  
- Atenciosamente,`;
+Atenciosamente,`;
     whatsappTexto = `🔔✅[RESOLVIDO] INCIDENTE MASSIVO - ${titulo}✅🔔
 Olá!
 
