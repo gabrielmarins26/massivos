@@ -155,7 +155,7 @@ ${descricao}
 Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).
 
 Atenciosamente,`;
-    whatsappTexto = `🔔🚨INCIDENTE MASSIVO - ${titulo}🚨🔔
+    whatsappTexto = `*🔔🚨INCIDENTE MASSIVO - ${titulo}🚨🔔*
 Olá!
 
 ${descricao}
@@ -181,7 +181,7 @@ ${descricao}
 Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).
 
 Atenciosamente,`;
-    whatsappTexto = `🔔🚨[ATUALIZAÇÃO] INCIDENTE MASSIVO - ${titulo}🚨🔔
+    whatsappTexto = `*🔔🚨[ATUALIZAÇÃO] INCIDENTE MASSIVO - ${titulo}🚨🔔*
 Olá!
 
 ${descricao}
@@ -205,7 +205,7 @@ ${descricao}
 Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).
  
 Atenciosamente,`;
-    whatsappTexto = `🔔✅[RESOLVIDO] INCIDENTE MASSIVO - ${titulo}✅🔔
+    whatsappTexto = `*🔔✅[RESOLVIDO] INCIDENTE MASSIVO - ${titulo}✅🔔*
 Olá!
 
 ${descricao}
