@@ -223,6 +223,8 @@ Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a)
   document.getElementById("outputEmail").innerText = emailTexto;
   document.getElementById("outputWhatsApp").innerText = whatsappTexto;
   document.getElementById("outputWorkplace").innerText = workplaceTexto;
+
+  salvarIncidente();
 }
 
 function copiarConteudo(id) {
