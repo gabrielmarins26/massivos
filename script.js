@@ -258,3 +258,19 @@ function toCamelCase(str) {
     })
     .join(" "); // Junta as palavras novamente com espaço
 }
+
+function limparCampos() {
+  // Seleciona o formulário
+  const formulario = document.getElementById("comunicadoForm");
+
+  // Reseta todos os campos do formulário
+  formulario.reset();
+
+  // Limpa os campos de saída
+  document.getElementById("outputEmail").textContent = "";
+  document.getElementById("outputWhatsApp").textContent = "";
+  document.getElementById("outputWorkplace").textContent = "";
+
+  // Opcional: caso deseje redefinir o select do incidente também
+  document.getElementById("incidentSelect").value = "";
+}
