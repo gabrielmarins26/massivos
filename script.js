@@ -140,7 +140,7 @@ ${descricao}
 ⏳ A falha foi identificada em ${formatarData(dataIdentificacao)}.
 ⏰ Nova atualização sobre este caso em ${formatarData(dataAtualizacao)}.
 
-Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).
+Para mais informações, entrar em contato com ${nomeAnalista}.
 
 Atenciosamente,`;
 
@@ -152,13 +152,13 @@ ${descricao}
 ⏳ A falha foi identificada em ${formatarData(dataIdentificacao)}.
 ⏰ Nova atualização sobre este caso em ${formatarData(dataAtualizacao)}.
 
-Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).`;
+Para mais informações, entrar em contato com ${nomeAnalista}.`;
 
     workplaceTexto = `🔔🚨INCIDENTE MASSIVO - ${titulo}🚨🔔
 Olá!  ${descricao}
 ⏳ A falha foi identificada em ${formatarData(dataIdentificacao)}.
 ⏰ Nova atualização sobre este caso em ${formatarData(dataAtualizacao)}.
-Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).
+Para mais informações, entrar em contato com ${nomeAnalista}.
 #comunicadooficial #incidentemassivo #incidentetecnologia #falhadeservico #indisponibilidade #getic`;
   } else if (tipo === "ATUALIZAÇÃO") {
     emailTexto = `🔔🚨[ATUALIZAÇÃO] INCIDENTE MASSIVO - ${titulo} - <<${numero}>>🚨🔔
@@ -168,7 +168,7 @@ ${descricao}
 
 ⏰ Nova atualização sobre este caso em ${formatarData(dataAtualizacao)}.
 
-Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).
+Para mais informações, entrar em contato com ${nomeAnalista}.
 
 Atenciosamente,`;
 
@@ -179,12 +179,12 @@ ${descricao}
 
 ⏰ Nova atualização sobre este caso em ${formatarData(dataAtualizacao)}.
 
-Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).`;
+Para mais informações, entrar em contato com ${nomeAnalista}.`;
 
     workplaceTexto = `🔔🚨[ATUALIZAÇÃO] INCIDENTE MASSIVO - ${titulo}🚨🔔
 Olá!  ${descricao}
 ⏰ Nova atualização sobre este caso em ${formatarData(dataAtualizacao)}.
-Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).
+Para mais informações, entrar em contato com ${nomeAnalista}.
 #comunicadooficial #incidentemassivo #incidentetecnologia #falhadeservico #indisponibilidade #getic`;
   } else if (tipo === "RESOLVIDO") {
     emailTexto = `🔔✅[RESOLVIDO] INCIDENTE MASSIVO - ${titulo} - <<${numero}>>✅🔔
@@ -194,7 +194,7 @@ ${descricao}
 
 ✅ O problema foi resolvido em ${formatarData(dataResolucao)}.
 
-Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).
+Para mais informações, entrar em contato com ${nomeAnalista}.
  
 Atenciosamente,`;
 
@@ -205,12 +205,12 @@ ${descricao}
 
 ✅ O problema foi resolvido em ${formatarData(dataResolucao)}.
 
-Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).`;
+Para mais informações, entrar em contato com ${nomeAnalista}.`;
 
     workplaceTexto = `🔔✅[RESOLVIDO] INCIDENTE MASSIVO - ${titulo}✅🔔
 Olá!  ${descricao}
 ✅ O problema foi resolvido em ${formatarData(dataResolucao)}.
-Para mais informações, o(a) analista ${nomeAnalista} poderá ser consultado(a).
+Para mais informações, entrar em contato com ${nomeAnalista}.
 #comunicadooficial #incidentemassivo #incidentetecnologia #falhadeservico #indisponibilidade #getic`;
   }
 
