@@ -12,24 +12,28 @@
       <div class="grid-container">
         <!-- Grid 1: Selects e Botões -->
         <div class="grid-item">
-          <div>
-            <label for="incidentSelect"
-              >Selecione um incidente massivo salvo:</label
-            >
-            <select id="incidentSelect" onchange="loadIncident()">
-              <option value="">Selecione...</option>
-            </select>
-          </div>
-
-          <button type="button" onclick="gerarComunicado()">
-            Gerar Comunicado
+          <button type="button" onclick="limparFormulario()">
+            Limpar formulário
           </button>
-
+          <button type="button" onclick="cadastrarIncidente()">
+            Cadastrar Incidente
+          </button>
           <button type="button" onclick="excluirIncidente()">
             Excluir Incidente
           </button>
-
-          <button type="button" onclick="limparCampos()">Limpar Campos</button>
+          <!-- <button type="button" onclick="limparLocalStorage()">
+            Limpar Todos os Dados
+          </button> -->
+          <table id="incidentTable">
+            <thead>
+              <tr>
+                <th>Incidentes Massivos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Incidentes serão carregados de localStorage aqui -->
+            </tbody>
+          </table>
         </div>
 
         <!-- Grid 2: Formulário -->
@@ -43,41 +47,75 @@
             </select>
 
             <label for="titulo">Título do Incidente:</label>
-            <input type="text" id="titulo" required />
+            <input
+              type="text"
+              id="titulo"
+              required
+              oninput="gerarComunicado()" />
 
             <label for="numero">Número do Incidente (Opcional):</label>
-            <input type="text" id="numero" />
+            <input type="text" id="numero" oninput="gerarComunicado()" />
 
             <label for="descricao">Descrição do Incidente:</label>
-            <textarea id="descricao" required></textarea>
+            <textarea
+              id="descricao"
+              required
+              oninput="gerarComunicado()"></textarea>
 
             <label for="dataIdentificacao"
               >Data de Identificação (Opcional):</label
             >
-            <input type="datetime-local" id="dataIdentificacao" />
+            <input
+              type="datetime-local"
+              id="dataIdentificacao"
+              oninput="gerarComunicado()" />
 
             <label for="dataAtualizacao"
               >Data da Próxima Atualização (Opcional):</label
             >
-            <input type="datetime-local" id="dataAtualizacao" />
+            <input
+              type="datetime-local"
+              id="dataAtualizacao"
+              oninput="gerarComunicado()" />
 
             <label for="dataResolucao">Data da Resolução (Opcional):</label>
-            <input type="datetime-local" id="dataResolucao" />
+            <input
+              type="datetime-local"
+              id="dataResolucao"
+              oninput="gerarComunicado()" />
 
             <label for="nomeAnalista">Nome do Analista:</label>
-            <input type="text" id="nomeAnalista" required />
+            <input
+              type="text"
+              id="nomeAnalista"
+              required
+              oninput="gerarComunicado()" />
           </form>
         </div>
 
-        <!-- prettier-ignore -->
         <div class="grid-item">
-          <button type="button" class="grid-button" onclick="copiarConteudo('outputEmail')"> Copiar E-mail </button>
-          <button type="button" class="grid-button" onclick="copiarConteudo('outputWhatsApp')"> Copiar WhatsApp </button>
-          <button type="button" class="grid-button" onclick="copiarConteudo('outputWorkplace')"> Copiar Workplace </button>
+          <button
+            type="button"
+            class="grid-button"
+            onclick="copiarConteudo('outputEmail')">
+            Copiar E-mail
+          </button>
+          <button
+            type="button"
+            class="grid-button"
+            onclick="copiarConteudo('outputWhatsApp')">
+            Copiar WhatsApp
+          </button>
+          <button
+            type="button"
+            class="grid-button"
+            onclick="copiarConteudo('outputWorkplace')">
+            Copiar Workplace
+          </button>
           <div class="output">
             <h2>Comunicado para E-mail:</h2>
             <pre id="outputEmail"></pre>
-            
+
             <h2>Comunicado para WhatsApp:</h2>
             <pre id="outputWhatsApp"></pre>
 
