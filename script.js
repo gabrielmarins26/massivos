@@ -94,11 +94,7 @@ function carregarIncidenteNoFormulario(id) {
   document.getElementById("dataAtualizacao").value = incidente.dataAtualizacao;
   document.getElementById("dataResolucao").value = incidente.dataResolucao;
   document.getElementById("nomeAnalista").value = incidente.nomeAnalista;
-
-  // Ajustar o campo "Tipo do Comunicado" com o valor salvo
-  document.getElementById("tipo").value = incidente.tipo || "PADRÃO"; // Caso não haja um valor salvo, define como "PADRÃO"
-
-  // Salvar o ID do incidente atual em uma variável no formulário
+  document.getElementById("tipo").value = incidente.tipo;
   document.getElementById("comunicadoForm").setAttribute("data-id", id);
 
   gerarComunicado();
@@ -273,28 +269,8 @@ function excluirIncidente() {
   // Atualiza o localStorage com a lista filtrada
   localStorage.setItem("incidentes", JSON.stringify(incidentes));
 
-  // Recarregar a tabela de incidentes
+  limparFormulario();
   carregarIncidentes();
-
-  // Limpar o formulário e saídas
-  document.getElementById("comunicadoForm").reset();
-  document.getElementById("outputEmail").innerText = "";
-  document.getElementById("outputWhatsApp").innerText = "";
-  document.getElementById("outputWorkplace").innerText = "";
-
-  // Verificar se há incidentes restantes após a exclusão
-  if (incidentes.length > 0) {
-    // Selecionar a tabela de incidentes
-    const tabela = document
-      .getElementById("incidentTable")
-      .getElementsByTagName("tbody")[0];
-
-    // Obter a última linha da tabela
-    const ultimaLinha = tabela.rows[tabela.rows.length - 1];
-
-    // Simular o clique no último item da tabela
-    ultimaLinha.click();
-  }
 }
 
 // Função para copiar o conteúdo gerado
@@ -328,6 +304,10 @@ function toCamelCase(str) {
 
 function limparFormulario() {
   document.getElementById("comunicadoForm").reset();
+  document.getElementById("comunicadoForm").removeAttribute("data-id");
+  document.getElementById("outputEmail").innerText = "";
+  document.getElementById("outputWhatsApp").innerText = "";
+  document.getElementById("outputWorkplace").innerText = "";
 }
 
 // Função para limpar todo o localStorage
