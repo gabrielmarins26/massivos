@@ -17,6 +17,7 @@ function formatarData(dataISO) {
 
 // Função para cadastrar um novo incidente
 function cadastrarIncidente() {
+  const id = gerarIdUnico();
   const titulo = document.getElementById("titulo").value.trim();
   const descricao = document.getElementById("descricao").value.trim();
   const numero = document.getElementById("numero").value.trim();
@@ -24,19 +25,17 @@ function cadastrarIncidente() {
   const dataAtualizacao = document.getElementById("dataAtualizacao").value;
   const dataResolucao = document.getElementById("dataResolucao").value;
   const nomeAnalista = document.getElementById("nomeAnalista").value.trim();
+  const tipo = document.getElementById("tipo").value; // Captura o valor do tipo
 
   if (!titulo) {
-    alert("Titulo é obrigatório!");
+    alert("Titulo obrigatório!");
     return;
   }
 
   let incidentes = JSON.parse(localStorage.getItem("incidentes")) || [];
 
-  // Gerar um ID único
-  const id = gerarIdUnico();
-
   const incidente = {
-    id, // Salvar o ID único
+    id,
     titulo,
     descricao,
     numero,
@@ -44,6 +43,7 @@ function cadastrarIncidente() {
     dataAtualizacao,
     dataResolucao,
     nomeAnalista,
+    tipo,
   };
 
   incidentes.push(incidente);
@@ -64,7 +64,9 @@ function carregarIncidentes() {
   incidentes.forEach((incidente) => {
     const row = tabela.insertRow();
     const cell = row.insertCell(0);
-    cell.textContent = incidente.titulo;
+    cell.textContent = incidente.numero
+      ? incidente.numero + " - " + incidente.titulo
+      : incidente.titulo;
 
     // Adiciona o ID do incidente à linha da tabela
     row.setAttribute("data-id", incidente.id);
@@ -83,6 +85,7 @@ function carregarIncidenteNoFormulario(id) {
 
   if (!incidente) return;
 
+  // Carregar dados nos campos
   document.getElementById("titulo").value = incidente.titulo;
   document.getElementById("descricao").value = incidente.descricao;
   document.getElementById("numero").value = incidente.numero;
@@ -91,6 +94,9 @@ function carregarIncidenteNoFormulario(id) {
   document.getElementById("dataAtualizacao").value = incidente.dataAtualizacao;
   document.getElementById("dataResolucao").value = incidente.dataResolucao;
   document.getElementById("nomeAnalista").value = incidente.nomeAnalista;
+
+  // Ajustar o campo "Tipo do Comunicado" com o valor salvo
+  document.getElementById("tipo").value = incidente.tipo || "PADRÃO"; // Caso não haja um valor salvo, define como "PADRÃO"
 
   // Salvar o ID do incidente atual em uma variável no formulário
   document.getElementById("comunicadoForm").setAttribute("data-id", id);
@@ -101,6 +107,7 @@ function carregarIncidenteNoFormulario(id) {
 // Função para atualizar o incidente sempre que um campo for modificado
 function gerarComunicado() {
   const id = document.getElementById("comunicadoForm").getAttribute("data-id");
+  const tipo = document.getElementById("tipo").value;
   const titulo = document.getElementById("titulo").value.trim();
   const descricao = document.getElementById("descricao").value.trim();
   const numero = document.getElementById("numero").value.trim();
@@ -123,10 +130,10 @@ function gerarComunicado() {
     dataIdentificacao,
     dataAtualizacao,
     dataResolucao,
-    nomeAnalista
+    nomeAnalista,
+    tipo
   );
 
-  const tipo = document.getElementById("tipo").value;
   let emailTexto = "";
   let whatsappTexto = "";
   let workplaceTexto = "";
@@ -228,7 +235,8 @@ function atualizarIncidente(
   dataIdentificacao,
   dataAtualizacao,
   dataResolucao,
-  nomeAnalista
+  nomeAnalista,
+  tipo
 ) {
   let incidentes = JSON.parse(localStorage.getItem("incidentes")) || [];
 
@@ -245,6 +253,7 @@ function atualizarIncidente(
       dataAtualizacao,
       dataResolucao,
       nomeAnalista,
+      tipo, // Atualiza o tipo do comunicado
     };
 
     localStorage.setItem("incidentes", JSON.stringify(incidentes));
