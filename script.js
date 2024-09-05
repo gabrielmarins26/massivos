@@ -303,8 +303,8 @@ function toCamelCase(str) {
 }
 
 function limparFormulario() {
-  document.getElementById("comunicadoForm").reset();
   document.getElementById("comunicadoForm").removeAttribute("data-id");
+  document.getElementById("comunicadoForm").reset();
   document.getElementById("outputEmail").innerText = "";
   document.getElementById("outputWhatsApp").innerText = "";
   document.getElementById("outputWorkplace").innerText = "";
