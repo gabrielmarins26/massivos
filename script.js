@@ -65,8 +65,8 @@ function carregarIncidentes() {
     const row = tabela.insertRow();
     const cell = row.insertCell(0);
     cell.textContent = incidente.numero
-      ? incidente.numero + " - " + incidente.titulo
-      : incidente.titulo;
+      ? incidente.tipo + " - " + incidente.numero + " - " + incidente.titulo
+      : incidente.tipo + " - " + incidente.titulo;
 
     // Adiciona o ID do incidente à linha da tabela
     row.setAttribute("data-id", incidente.id);
